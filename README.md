@@ -57,4 +57,4 @@ Try (http://localhost:8080/users)
 
 
 For any issues setting up
-My Email `programmnighup@gmail.com`
+My Email `programminghup@gmail.com`
