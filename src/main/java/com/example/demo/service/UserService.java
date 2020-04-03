@@ -8,7 +8,6 @@
 package com.example.demo.service;
 
 import com.example.demo.model.User;
-import com.example.demo.repository.UserRepository;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
@@ -18,18 +17,15 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private UserRepository userRepository;
     private MongoTemplate mongoTemplate;
 
-    public UserService(UserRepository userRepository, MongoTemplate mongoTemplate) {
-        this.userRepository = userRepository;
+    public UserService(MongoTemplate mongoTemplate) {
         this.mongoTemplate = mongoTemplate;
     }
 
     public List<User> getAllUser() {
-        List<User> user =  mongoTemplate.find(query(where("salary").gte(Double.valueOf(0))
-                .orOperator(where("salary").lte(Double.valueOf(4000))))
+        return mongoTemplate.find(query(where("salary").gte((double) 0)
+                .orOperator(where("salary").lte(4000d)))
                 , User.class);
-        return user;
     }
 }

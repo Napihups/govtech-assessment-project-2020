@@ -14,12 +14,12 @@ public interface DBHelper {
     /**
      * Clean up all data from the Database
      */
-    public void cleanDB();
+    void cleanDB();
 
     /**
      * Reading CSV files provided by caller, initialized and marshalling
      * data columns to POJO , Saving Pojo to MongoDB
      */
-    public void initDataToDB();
+    void initDataToDB();
 
 }
