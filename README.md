@@ -14,6 +14,9 @@ You may run this application locally within Intellij, by setup the
 
 ```properties
 spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=GAP
+spring.data.mongodb.repositories.type=auto
 ```
 
 Run on Intellij
